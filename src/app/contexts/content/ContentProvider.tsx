@@ -1,3 +1,4 @@
+"use client"
 import { createContext, ReactNode, useState } from "react";
 import { CategoryEnum, CONTENT, Content } from "./dto/content.dto";
 

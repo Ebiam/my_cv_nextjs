@@ -9,9 +9,9 @@ import { MdPersonSearch } from "react-icons/md";
 import { VerticalIllustratedParagraph } from "@/app/components/VerticalIllustratedParagraph/VerticalIllustratedParagraph";
 import { ThemingContext } from "@/app/contexts/theme_styles/ThemeAndStyleProvider";
 import { ThemeEnum } from "@/app/contexts/theme_styles/dto/theme.dto";
-import { Experiences } from "@/app/page";
 import { ContentContext } from "@/app/contexts/content/ContentProvider";
 import { Content } from "@/app/contexts/content/dto/content.dto";
+import { Experiences } from "../main/MainContent";
 
 /**
  * Represents a menu item in a restaurant menu.
@@ -314,7 +314,7 @@ export default function RestaurantMenu() {
               justifyContent: "center",
             }}
           >
-            <h1>Enzo's Café</h1>
+            <h1>Enzo&apos;s Café</h1>
             <p>Brewed like in old time</p>
             <button
               style={{

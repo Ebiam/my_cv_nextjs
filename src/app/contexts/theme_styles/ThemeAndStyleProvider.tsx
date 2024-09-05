@@ -1,3 +1,4 @@
+"use client"
 import { createContext, ReactNode, useState } from "react";
 import { Style } from "./dto/style.dto";
 import { ThemeEnum } from "./dto/theme.dto";
