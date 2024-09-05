@@ -49,6 +49,7 @@ export function StyleToggleButtonGroup() {
     >
        {Object.keys(STYLES).map((key, index) => {
             return <button
+            key={index}
             onClick={() => setStyle(key as Style)}
             disabled={style === key}
             style={{
@@ -62,7 +63,7 @@ export function StyleToggleButtonGroup() {
     </div>
   );
 
-  return (
+  /*return (
     <ToggleButtonGroup
       color="secondary"
       style={{
@@ -80,7 +81,7 @@ export function StyleToggleButtonGroup() {
             }}>{key}</ToggleButton>;
       })}
     </ToggleButtonGroup>
-  );
+  );*/
 }
 
 
