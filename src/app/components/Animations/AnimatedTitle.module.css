@@ -1,0 +1,76 @@
+@keyframes fadeinanim {
+    0% {
+        transform: translateY(100%);
+    }
+    75% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes rotate {
+    0% {
+    }
+    75% {
+        transform: rotateY(180deg);
+    }
+    100% {
+    }
+}
+
+@keyframes fadeinopacity {
+    0% {
+        opacity: 0.33;
+    }
+    75% {
+        opacity: 0.77;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.AnimatedTitleContainer {
+    overflow: hidden;
+    animation: rotate 2s, fadeinopacity 1s;
+}
+
+@keyframes glitch {
+    0% {
+      text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 rgba(29, 95, 163),
+        0.025em 0.04em 0 #fffc00;
+    }
+    15% {
+      text-shadow: 0.05em 0 0 #00bfff, -0.03em -0.04em 0 rgba(29, 95, 163),
+        0.025em 0.04em 0 #2db50f;
+    }
+    16% {
+      text-shadow: -0.05em -0.025em 0 #0051ff, 0.025em 0.035em 0 rgba(29, 95, 163),
+        -0.05em -0.05em 0 #fffc00;
+    }
+    49% {
+      text-shadow: -0.05em -0.025em 0 #00c8ff, 0.025em 0.035em 0 rgba(29, 95, 163),
+        -0.05em -0.05em 0 #fffc00;
+    }
+    50% {
+      text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 rgba(29, 95, 163),
+        0 -0.04em 0 #2db50f;
+    }
+    99% {
+      text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 rgba(29, 95, 163),
+        0 -0.04em 0 #fffc00;
+    }
+    100% {
+      text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 rgba(29, 95, 163),
+        -0.04em -0.025em 0 #2db50f;
+    }
+  }
+
+.AnimatedTitle {
+    animation: fadeinanim 2s, glitch 2s;
+    transition: transform 1ms;
+    text-shadow: 0.05em 0 0 #2b91c0, -0.03em -0.04em 0 rgba(29, 95, 163),
+    0.025em 0.04em 0 #00000011;
+}

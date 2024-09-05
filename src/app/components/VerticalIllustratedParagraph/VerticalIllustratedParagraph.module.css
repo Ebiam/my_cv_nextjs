@@ -1,0 +1,117 @@
+.VerticalBlocksContainer {
+  display: flex;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.VerticalRight {
+  flex-direction: row-reverse;
+  align-self: flex-end;
+}
+
+.TextBlockContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 10px;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.TitleBar {
+  height: 1px;
+  width: 30px;
+  background-color: rgb(245, 75, 70);
+  content: "";
+  align-self: center;
+  margin-inline: 10px;
+}
+
+.ImgBlock  {
+  width: 60%;
+  min-width: 400px;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.Img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  /*mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);*/
+  border-radius: 12px 0px 0px 12px;
+}
+
+.ImgRight {
+  border-radius: 0px 12px 12px 0px;
+}
+
+@media screen and (max-width: 700px) {
+  .Img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    /*mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);*/
+    border-radius: 12px 0px 0px 12px;
+  }
+
+  .ImgRight {
+    border-radius: 0px 12px 12px 0px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .Img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    /*mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);*/
+    border-radius: 0px;
+  }
+
+  .ImgRight {
+    border-radius: 0px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ImgBlock  {
+    width: 60%;
+    min-width: 400px;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+  .TextBlockContainer {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 10px;
+    padding: 20px;
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ImgBlock {
+    min-width: 400px;
+    overflow: hidden;
+    width: 100%;
+    flex-grow: 1;
+    order: 1;
+  }
+  .TextBlockContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+    padding: 20px;
+    flex-grow: 1;
+  }
+  .VerticalBlocksContainer {
+    display: flex;
+    align-self: flex-start;
+    width: 100%;
+    flex-direction: column;
+  }
+}

@@ -1,4 +1,25 @@
 :root {
+  --primary-color: #0071ff;
+  --secondary-color: #16abff;
+  --tertiary-color: #54d6ff;
+  --quaternary-color: #0885ff;
+  --quinary-color: #ff0000;
+
+  --success-color: #00ff00;
+  --warning-color: #ffcc00;
+  --error-color: #ff0000;
+
+  --default-background: #ffffff;
+  --default-text: #000000;
+
+  --dark-mode-background: #000000;
+  --dark-mode-text: #ffffff;
+
+  --light-mode-background: #ffffff;
+  --light-mode-text: #000000;
+}
+
+:root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
