@@ -11,7 +11,7 @@ import { ThemingContext } from "@/app/contexts/theme_styles/ThemeAndStyleProvide
 import { ThemeEnum } from "@/app/contexts/theme_styles/dto/theme.dto";
 import { ContentContext } from "@/app/contexts/content/ContentProvider";
 import { Content } from "@/app/contexts/content/dto/content.dto";
-import { Experiences } from "../main/MainContent";
+
 
 /**
  * Represents a menu item in a restaurant menu.
@@ -374,8 +374,6 @@ export default function RestaurantMenu() {
         text="Plongez au coeur de la start up nation et laissez vous surprendre par un eventail de conseils pour votre business. Je vous accompagne dans votre aventure et vous fait profiter de l'experience que j'ai aquise en participant et en m'informant sur de nombreuses autres projets"
       />
       <MenuSection />
-
-      <Experiences />
     </div>
   );
 }

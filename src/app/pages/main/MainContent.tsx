@@ -5,14 +5,14 @@ import { IconContext } from "react-icons";
 import { AiFillLinkedin, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import styles from "@/app/page.module.css";
 
-import devImg from "@/../public/dev.png";
+
 
 import localFont from "next/font/local";
 import BgImgParagraph from "@/app/components/BgImgParagraph/BgImgParagraph";
 import AnimatedTitle from "@/app/components/Animations/AnimatedTitle";
 import MovingParagraph from "@/app/components/MovingParagraph/MovingParagraph";
 
-import Carrousel from "@/app/components/Carrousel/Carrousel";
+
 import SaasBg from "@/../public/littleSaas.jpg";
 import SaasBg_white from "@/../public/littleSaas_white2.jpg";
 import RestaurantPage from "@/app/pages/Restaurant/RestaurantPage";
@@ -21,6 +21,7 @@ import ToggleDarkMode from "@/app/components/Animations/Toogle/ToggleDarkMode";
 import { ThemingContext } from "@/app/contexts/theme_styles/ThemeAndStyleProvider";
 import { Style, STYLES } from "@/app/contexts/theme_styles/dto/style.dto";
 import { ThemeEnum, THEMES } from "@/app/contexts/theme_styles/dto/theme.dto";
+import { DevelopperContent } from "../developper/DevelopperPage";
 
 const myFont = localFont({
   src: "../../../../public/fonts/aquire-font/AquireBold-8Ma60.otf",
@@ -99,72 +100,9 @@ export function StyleToggleButtonGroup() {
   );*/
 }
 
-function PresentationBlocks() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        color: "white",
-        flexDirection: "row",
-        width: "100%",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-        gap: "2rem",
-      }}
-    >
-      <BgImgParagraph
-        altMovment={true}
-        title={"Présentations"}
-        text={
-          "Bienvenue sur mon site ! Je suis un développeur full stack passionné, récemment diplômé d'Epitech. Mon parcours dans le monde de la technologie est motivé par une curiosité insatiable et un désir incessant de donner vie à des idées innovantes. J'aime apprendre de nouvelles technologies et explorer des domaines variés, ce qui m'a permis d'acquérir une expérience précieuse dans un large spectre de domaines technologiques."
-        }
-      />
 
-      <BgImgParagraph
-        image={devImg.src}
-        title={"Experiences"}
-        text={
-          "Mon parcours et mes expériences m'ont permis d'acquérir des compétences dans la gestion de projets, le développement, l'intégration, la migration et la maintenance de projets web et mobile, mais aussi sur des projets de développement embarqué et de la recherche et développement."
-        }
-      />
-    </div>
-  );
-}
 
-export function Experiences() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "100%",
-        justifyContent: "space-evenly",
-        flexWrap: "wrap",
-        gap: "2rem",
-        padding: "2rem",
-      }}
-    >
-      <MovingParagraph
-        title="Développement de sites et d'applications web"
-        text="Du site vitrine au site e-commerce, je vous accompagne dans la création de votre site web. Je vous propose des solutions sur mesure, adaptées à vos besoins et à votre budget."
-        inverted
-      />
-      <MovingParagraph
-        title="Application mobiles Android et IOS"
-        text="Créez votre application sur mesure. Je vous accompagne dans la création de votre application mobile, de la conception à la publication sur les stores."
-      />
-      <MovingParagraph
-        title="Serveur et base de données"
-        text="Besoin de gérer les données de vos utilisateurs ? Je vous propose des solutions d'hébergement et de stockage de données adaptées à vos besoins."
-        inverted
-      />
-      <MovingParagraph
-        title="Solutions sur mesure"
-        text="Vous avez un projet spécifique ? Je vous propose des solutions sur mesure pour réaliser votre projet."
-      />
-    </div>
-  );
-}
+
 
 export function TopBar() {
   const { theme, setTheme } = React.useContext(ThemingContext);
@@ -370,7 +308,6 @@ export function SAASContent() {
         <h1>donnez enfin vie</h1>
         <h1> à vos idées</h1>
       </div>
-      <Experiences />
     </div>
   );
 }
@@ -408,27 +345,7 @@ export function NameHeader() {
   );
 }
 
-export function DevelopperContent() {
-  return (
-    <div
-      style={{
-        //backgroundColor: "black",
-        /*background:
-              "linear-gradient(rgba(20,53,163,1) 0%, rgba(2,0,36,1) 80%, rgba(2,0,36,1) 100%)",*/
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      {/*<Image src={profilePic} alt="Logo" width={500} height={500} />*/}
-      <PresentationBlocks />
-      <Carrousel />
-      <Experiences />
-    </div>
-  );
-}
+
 
 export function ContentSelector() {
   return <></>;

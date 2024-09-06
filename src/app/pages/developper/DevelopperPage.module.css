@@ -1,0 +1,77 @@
+.MovingParagraphsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.PresentationBlocksContainer {
+  display: flex;
+  color: white;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.PresentationBlock {
+  width: 45%;
+}
+
+.tv {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin: 20px 0;
+  border-radius: 50% / 10%;
+  text-align: center;
+  text-indent: 0.1em;
+  padding: 10px;
+}
+.tv:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: -5%;
+  left: -5%;
+  background: inherit;
+  border-radius: 5% / 50%;
+}
+
+
+/*media queries PresentationBlockContainer display column mobile, row on larger screens*/
+@media (max-width: /*768px*/ 832px) {
+  .PresentationBlocksContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+  }
+  .PresentationBlock {
+    width: 95%;
+  }
+}
+/*media queries PresentationBlockContainer display row on larger screens*/
+@media (min-width: /*768px*/ 832px) {
+  .PresentationBlocksContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+  }
+  .PresentationBlock {
+    width: 45%;
+  }
+}

@@ -1,11 +1,13 @@
 import styles from "./BgImgParagraph.module.css";
 import BgImg from '../../../../public/code.jpg';
+import { CSSProperties } from "react";
 
 interface ParagraphWithBgImageProps {
     title: string;
     text: string;
     image?: string;
     altMovment?: boolean;
+    className?: string;
 }  
 
 export default function ParagraphWithBgImage({
@@ -13,10 +15,11 @@ export default function ParagraphWithBgImage({
     text,
     image = "",
     altMovment = false,
+    className,
   }: ParagraphWithBgImageProps) {
     //let panImage = altMovment ? "pan-image" : "pan-image";
     return (
-      <div className={styles.Screen}>
+      <div className={`${styles.Screen + ' ' + className}`}>
         <div
           className={`${styles.ScreenBg} ` + (altMovment ? styles.ScreenBgAlt : ``)}
           style={{
