@@ -46,7 +46,7 @@
 
 
 /*media queries PresentationBlockContainer display column mobile, row on larger screens*/
-@media (max-width: /*768px*/ 832px) {
+@media only all and (max-width: /*768px*/ 832px) {
   .PresentationBlocksContainer {
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@
   }
 }
 /*media queries PresentationBlockContainer display row on larger screens*/
-@media (min-width: /*768px*/ 832px) {
+@media only all and (min-width: /*768px*/ 832px) {
   .PresentationBlocksContainer {
     display: flex;
     flex-direction: row;
