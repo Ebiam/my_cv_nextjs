@@ -17,7 +17,7 @@ export interface Content {
 
 export const CONTENT: Array<Content> = [
   {
-    title: "Développement de sites et d'applications web",
+    title: "Sites & Applications web",
     subTitle: "",
     description:
       "Du site vitrine au site e-commerce, je vous accompagne dans la création de votre site web. Je vous propose des solutions sur mesure, adaptées à vos besoins et à votre budget.",
