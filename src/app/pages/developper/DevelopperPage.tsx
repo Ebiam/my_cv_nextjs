@@ -4,28 +4,26 @@ import Carrousel from "@/app/components/Carrousel/Carrousel";
 import devImg from "@/../public/dev.png";
 import MovingParagraph from "@/app/components/MovingParagraph/MovingParagraph";
 import { ContentContext } from "@/app/contexts/content/ContentProvider";
+import { useTranslation } from 'next-i18next';
 
 import style from "./DevelopperPage.module.css";
 
 function PresentationBlocks() {
+  const { t } = useTranslation('common');
   return (
     <div className={style.PresentationBlocksContainer}>
       <BgImgParagraph
         altMovment={true}
         className={`${style.PresentationBlock + " " /*+ style.tv*/}`}
-        title={"Présentations"}
-        text={
-          "Bienvenue sur mon site ! Je suis un développeur full stack passionné, récemment diplômé d'Epitech. Mon parcours dans le monde de la technologie est motivé par une curiosité insatiable et un désir incessant de donner vie à des idées innovantes. J'aime apprendre de nouvelles technologies et explorer des domaines variés, ce qui m'a permis d'acquérir une expérience précieuse dans un large spectre de domaines technologiques."
-        }
+        title={t("presentations")}
+        text={t("presentations_text")}
       />
 
       <BgImgParagraph
         className={`${style.PresentationBlock}`}
         image={devImg.src}
-        title={"Experiences"}
-        text={
-          "Mon parcours et mes expériences m'ont permis d'acquérir des compétences dans la gestion de projets, le développement, l'intégration, la migration et la maintenance de projets web et mobile, mais aussi sur des projets de développement embarqué et de la recherche et développement."
-        }
+        title={t("experiences")}
+        text={t("experiences_text")}
       />
     </div>
   );

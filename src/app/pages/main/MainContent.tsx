@@ -5,13 +5,10 @@ import { IconContext } from "react-icons";
 import { AiFillLinkedin, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import styles from "@/app/page.module.css";
 
-
-
 import localFont from "next/font/local";
 import BgImgParagraph from "@/app/components/BgImgParagraph/BgImgParagraph";
 import AnimatedTitle from "@/app/components/Animations/AnimatedTitle";
 import MovingParagraph from "@/app/components/MovingParagraph/MovingParagraph";
-
 
 import SaasBg from "@/../public/littleSaas.jpg";
 import SaasBg_white from "@/../public/littleSaas_white2.jpg";
@@ -22,6 +19,7 @@ import { ThemingContext } from "@/app/contexts/theme_styles/ThemeAndStyleProvide
 import { Style, STYLES } from "@/app/contexts/theme_styles/dto/style.dto";
 import { ThemeEnum, THEMES } from "@/app/contexts/theme_styles/dto/theme.dto";
 import { DevelopperContent } from "../developper/DevelopperPage";
+import { useTranslation } from 'next-i18next';
 
 const myFont = localFont({
   src: "../../../../public/fonts/aquire-font/AquireBold-8Ma60.otf",
@@ -31,6 +29,7 @@ const myFont = localFont({
 
 export function StyleToggleButtonGroup() {
   const { theme, style, setTheme, setStyle } = React.useContext(ThemingContext);
+  const { t } = useTranslation('common');
 
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -72,40 +71,17 @@ export function StyleToggleButtonGroup() {
               color: "white",
             }}
           >
-            {key}
+            {t(key)}
           </button>
         );
       })}
     </div>
   );
-
-  /*return (
-    <ToggleButtonGroup
-      color="secondary"
-      style={{
-        backgroundColor: THEMES[theme].backgroundColor,
-      }}
-      value={style}
-      exclusive
-      onChange={handleChange}
-      aria-label="Platform"
-    >
-      {Object.keys(STYLES).map((key) => {
-            return <ToggleButton value={key} 
-            style={{
-              color: THEMES[theme].color,
-            }}>{key}</ToggleButton>;
-      })}
-    </ToggleButtonGroup>
-  );*/
 }
-
-
-
-
 
 export function TopBar() {
   const { theme, setTheme } = React.useContext(ThemingContext);
+  const { t } = useTranslation('common');
 
   const email = "enzo.biamonti@epitech.eu";
   const subject = encodeURIComponent("[Contact] Demande de devis");
@@ -191,6 +167,7 @@ export function Dot({
 
 export function StatusPills() {
   const { theme, style } = React.useContext(ThemingContext);
+  const { t } = useTranslation('common');
 
   return (
     <div
@@ -212,7 +189,7 @@ export function StatusPills() {
           alignSelf: "center",
         }}
       >
-        Disponibilités :
+        {t("availability")}
       </h5>
       <div
         style={{
@@ -228,7 +205,7 @@ export function StatusPills() {
           borderRadius: "1rem",
         }}
       >
-        <p>Mission / Devis</p>
+        <p>{t("mission_quote")}</p>
         <Dot color="orange" />
       </div>
       <div
@@ -245,7 +222,7 @@ export function StatusPills() {
           borderRadius: "1rem",
         }}
       >
-        <p>CDI / CDD</p>
+        <p>{t("cdi_cdd")}</p>
         <Dot color="lightgreen" />
       </div>
     </div>
@@ -254,6 +231,7 @@ export function StatusPills() {
 
 export function SAASContent() {
   const { theme } = React.useContext(ThemingContext);
+  const { t } = useTranslation('common');
 
   return (
     <div
@@ -293,7 +271,7 @@ export function SAASContent() {
         }}
       >
         <h1>
-          Grâce à
+          {t("thanks_to")}
           <span
             style={{
               color: THEMES[theme].primaryColor,
@@ -305,14 +283,15 @@ export function SAASContent() {
           </span>
           ,
         </h1>{" "}
-        <h1>donnez enfin vie</h1>
-        <h1> à vos idées</h1>
+        <h1>{t("give_life_to_your_ideas")}</h1>
       </div>
     </div>
   );
 }
 
 export function NameHeader() {
+  const { t } = useTranslation('common');
+
   return (
     <div
       style={{
@@ -325,7 +304,7 @@ export function NameHeader() {
       }}
     >
       <AnimatedTitle
-        title="Enzo Biamonti"
+        title={t("title")}
         textClass={myFont.className}
         textStyles={{ textAlign: "center", fontWeight: "bold" }}
       />
@@ -338,14 +317,12 @@ export function NameHeader() {
           textAlign: "center",
         }}
       >
-        Développeur Freelance Web et Mobile
+        {t("subtitle")}
       </p>
       <StatusPills />
     </div>
   );
 }
-
-
 
 export function ContentSelector() {
   return <></>;
@@ -353,6 +330,7 @@ export function ContentSelector() {
 
 export function MainContent() {
   const { theme, style } = React.useContext(ThemingContext);
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     console.log("theme changed", theme);
@@ -377,7 +355,7 @@ export function MainContent() {
       }}
     >
       <NameHeader />
-      <h2>Choisissez votre style :</h2>
+      <h2>{t("choose_style")}</h2>
       <StyleToggleButtonGroup />
 
       {style === Style.DEV ? (

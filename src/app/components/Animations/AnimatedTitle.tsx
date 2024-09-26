@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from 'next-i18next';
 import styles from "./AnimatedTitle.module.css";
 
 interface AnimatedTitleProps {
@@ -12,6 +13,7 @@ export default function AnimatedTitle({
   textClass,
   textStyles,
 }: AnimatedTitleProps) {
+  const { t } = useTranslation('common');
   
   return (
     <div className={styles.AnimatedTitleContainer}>
@@ -21,7 +23,7 @@ export default function AnimatedTitle({
         }
         style={textStyles ? textStyles : []}
       >
-        {title}
+        {t(title)}
       </h1>
     </div>
   );
