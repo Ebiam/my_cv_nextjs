@@ -29,7 +29,7 @@ const myFont = localFont({
 
 export function StyleToggleButtonGroup() {
   const { theme, style, setTheme, setStyle } = React.useContext(ThemingContext);
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -81,7 +81,7 @@ export function StyleToggleButtonGroup() {
 
 export function TopBar() {
   const { theme, setTheme } = React.useContext(ThemingContext);
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   const email = "enzo.biamonti@epitech.eu";
   const subject = encodeURIComponent("[Contact] Demande de devis");
@@ -112,6 +112,19 @@ export function TopBar() {
             );
           }}
         />
+        <button
+          onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en')}
+          style={{
+            marginLeft: "10px",
+            padding: "5px 10px",
+            border: "1px solid black",
+            borderRadius: "5px",
+            backgroundColor: THEMES[theme].primaryColor,
+            color: "white",
+          }}
+        >
+          {i18n.language === 'en' ? 'FR' : 'EN'}
+        </button>
       </div>
       <IconContext.Provider
         value={{
@@ -167,7 +180,7 @@ export function Dot({
 
 export function StatusPills() {
   const { theme, style } = React.useContext(ThemingContext);
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   return (
     <div
@@ -231,7 +244,7 @@ export function StatusPills() {
 
 export function SAASContent() {
   const { theme } = React.useContext(ThemingContext);
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   return (
     <div
@@ -290,7 +303,7 @@ export function SAASContent() {
 }
 
 export function NameHeader() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   return (
     <div
@@ -330,7 +343,7 @@ export function ContentSelector() {
 
 export function MainContent() {
   const { theme, style } = React.useContext(ThemingContext);
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   useEffect(() => {
     console.log("theme changed", theme);
